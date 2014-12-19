@@ -4,16 +4,18 @@
 
 <form method="post">
 
-  标题：<br />
+	<div class="loginAccountTitle">
+		标题：
+	</div>
 
-  <input type="text" name="title" /><br />
-
-  正文：<br />
-
-  <textarea name="post" rows="20" cols="100"></textarea><br />
-
-  <input type="submit" value="发表"/>
-
+	<input type="text" name="title" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
+  <div class="loginAccountTitle">
+		正文：
+	</div>
+<div>
+  <textarea name="post" class="postEdit" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"></textarea>
+</div>
+	<input class="submitBtn" type="submit" value="发表">
 </form>
 
 <%- include footer %>
