@@ -2,20 +2,48 @@
 
 <%- include header %>
 
+<script type="text/javascript">
+
+function isNull( str ){ 
+	if ( str == "" )
+	{
+	 	return true; 
+	}
+	var regu = "^[ ]+$"; 
+	var re = new RegExp(regu); 
+	return re.test(str); 
+} 
+
+function checkPost(){ 
+	var form1 = window.document.getElementById("formLogin");//获取form1对象
+	var title1 = window.document.getElementById("title_").value;//获取form1对象
+	var postEdit1 = window.document.getElementById("postEdit_").value;//获取form1对象
+	if ( isNull(title1 ) || isNull(postEdit1 ) )
+	{
+		alert("标题或内容不能为空！");
+	} 
+	else
+	{
+		form1.submit();
+	}
+}
+
+</script>
+
 <form method="post">
 
 	<div class="loginAccountTitle">
 		标题：
 	</div>
 
-	<input type="text" name="title" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
+	<input type="text" name="title" size="36" id="title_"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
   <div class="loginAccountTitle">
 		正文：
 	</div>
 <div>
-  <textarea name="post" class="postEdit" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"></textarea>
+  <textarea name="post" class="postEdit" id="postEdit_" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"></textarea>
 </div>
-	<input class="submitBtn" type="submit" value="发表">
+	<input class="submitBtn" type="button" onClick="checkPost()" value="发表">
 </form>
 
 <%- include footer %>

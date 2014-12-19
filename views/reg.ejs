@@ -1,18 +1,48 @@
 <%- include header %>
-<form method="post">
 
+<script type="text/javascript">
+
+function isNull( str ){ 
+	if ( str == "" )
+	{
+	 	return true; 
+	}
+	var regu = "^[ ]+$"; 
+	var re = new RegExp(regu); 
+	return re.test(str); 
+} 
+
+function checkPost(){ 
+	var form1 = window.document.getElementById("formLogin");//获取form1对象
+	var name1 = window.document.getElementById("name_").value;//获取form1对象
+	var password1 = window.document.getElementById("password_").value;//获取form1对象
+	var password2 = window.document.getElementById("password-repeat_").value;//获取form1对象
+	var email1 = window.document.getElementById("email_").value;//获取form1对象
+	if ( isNull(name1 ) || isNull(password1 ) || isNull(password2 ) || isNull(email1 ) )
+	{
+		alert("信息不完整，请检查！");
+	} 
+	else
+	{
+		form1.submit();
+	}
+}
+
+</script>
+
+<form method="post">
 
 	<div class="loginAccountTitle">
 		用户名：
 	</div>
 	<div class="aaa">
-		<input type="text" name="name" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
+		<input type="text" name="name" id="name_" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
 	</div>
 	<div class="loginAccountTitle">
 		密码：
 	</div>
 	<div class="aaa">
-		<input type="password" name="password"  class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
+		<input type="password" name="password" id="password_"  class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
 	</div>
 
 
@@ -20,7 +50,7 @@
 		确认密码：
 	</div>
 	<div class="aaa">
-		<input type="password" name="password-repeat"  class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
+		<input type="password" name="password-repeat" id="password-repeat_"  class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
 	</div>
 
 
@@ -29,11 +59,11 @@
 		邮箱：
 	</div>
 	<div class="aaa">
-		<input type="email" name="email"  class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
+		<input type="email" name="email"  class="loginAccountEdit" id="email_" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
 	</div>
 
 	<div>
-		<input class="submitBtn" type="submit" value="登录">
+		<input class="submitBtn" type="button" onClick="checkPost()" value="注册">
 	</div>
 
 </form>
