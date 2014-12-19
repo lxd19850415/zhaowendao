@@ -7,21 +7,29 @@
   <body>
    
   	<header>
-  		<h1><%= title%></h1>
+  		<!-- <h1><%= title%></h1>-->
   	</header>
 
-  	<nav>
-  		<span><a title="主页" href="/">home</a></span>
+  	<div class="navbg">
+      <div class="navbg2">
+    		<div class="nav_"><a class="nav_a" title="主页" href="/">主页</a></div>
+        <div class="nav_"><a class="nav_a" title="搜索" href="/">搜索</a></div>
+        <div class="nav_"><a class="nav_a" title="最热" href="/">热点</a></div>
+
+        <% if(user) { %>
+        <div class="nav_"><a class="nav_a" title="发表" href="/post">发表</a></div>
+        <% } %>
+
+      </div>
       <% if(user) { %>
-
-      <span><a title="发表" href="/post">post</a></span>
-      <span><a title="登出" href="/logout">logout</a></span>
+      <div class="l"><a title="登出" href="/logout">登出</a></div>
       <% } else { %>
-  		<span><a title="登录" href="/login">login</a></span>
-  		<span><a title="注册" href="/reg">register</a></span>
+  		<div class="l"><a title="登录" href="/login">登录</a></div>
+  		<div class="l"><a title="注册" href="/reg">注册</a></div>
       <% } %>
-  	</nav>
+  	</div>
 
+    <div class="center">
   	<article>
 
 
