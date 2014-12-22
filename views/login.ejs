@@ -14,15 +14,33 @@ function isNull( str ){
 } 
 
 function checkPost(){ 
-	var form1 = window.document.getElementById("formLogin");//获取form1对象
 	var name1 = window.document.getElementById("name_").value;//获取form1对象
 	var password1 = window.document.getElementById("password_").value;//获取form1对象
-	if ( isNull(name1 ) || isNull(password1 ) )
+	var accoutMsg = window.document.getElementById("accountErrMsg");
+	var pwdMsg = window.document.getElementById("pwdErrMsg");
+	
+	if(isNull(name1 ) )
 	{
-		alert("用户名或密码不能为空！");
-	} 
+		accoutMsg.style.display="block";
+	}
 	else
 	{
+		accoutMsg.style.display="none";
+	}
+
+	if(isNull(password1 ) )
+	{
+		pwdMsg.style.display="block";
+	}
+	else
+	{
+		pwdMsg.style.display="none";
+	}
+	
+
+	if ( !isNull(name1 ) && !isNull(password1 ) )
+	{
+		var form1 = window.document.getElementById("formLogin");//获取form1对象
 		form1.submit();
 	}
 }
@@ -30,16 +48,31 @@ function checkPost(){
 </script>
 
 <form method="post" id="formLogin">
-	<div class="loginAccountTitle">
-		用户名：
+
+
+	<div class="accountAndErrMsgDiv">
+		<div class="loginAccountTitle">
+			账号：
+		</div>
+		<div id="accountErrMsg">
+			<span >账号不能为空！</span>
+		</div>
 	</div>
-	<div class="aaa">
+	<div class="accountEdit">
 		<input type="text" name="name" id="name_" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
 	</div>
-	<div class="loginAccountTitle">
-		密码：
+
+
+	<div class="accountAndErrMsgDiv">
+		<div class="loginAccountTitle">
+			密码：
+		</div>
+
+		<div id="pwdErrMsg">
+			<span style="color:red">密码不能为空！</span>
+		</div>
 	</div>
-	<div class="aaa">
+	<div class="accountEdit">
 		<input type="password" name="password" id="password_"   class="loginAccountEdit" size="36" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"  />
 	</div>
 	<div>
