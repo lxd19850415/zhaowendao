@@ -45,6 +45,11 @@ function checkPost(){
 	}
 }
 
+function showErrMsg(){ 
+	var accoutMsg = window.document.getElementById("accountErrMsg");
+	accoutMsg.style.display="block";
+}
+
 </script>
 
 <form method="post" id="formLogin">
@@ -54,10 +59,22 @@ function checkPost(){
 		<div class="loginAccountTitle">
 			账号：
 		</div>
-		<div id="accountErrMsg">
-			<span >账号不能为空！</span>
-		</div>
+
+		<% if (error) {%>
+      		<div id="accountErrMsg">
+				<span ><%= error %></span>
+			</div>
+			<script type="text/javascript">
+				showErrMsg();
+			</script>
+
+      	<% } else{%>
+	      	<div id="accountErrMsg">
+				<span >账号不能为空！</span>
+			</div>
+      	<% } %>
 	</div>
+	
 	<div class="accountEdit">
 		<input type="text" name="name" id="name_" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
 	</div>
