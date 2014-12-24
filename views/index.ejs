@@ -1,7 +1,7 @@
 <%- include header %>
 <% posts.forEach(function (post, index) { %>
 
-  <p><h2><a href="#"><%= post.title %></a></h2></p>
+  <h2><a href="#"><%= post.title %></a></h2>
 
   <p class="info">
 
@@ -10,7 +10,8 @@
 
   </p>
 
-  <p><%- post.post %></p>
-
+  <p class="post_"><%- post.post %></p>
+<hr/>
+<br/>
 <% }) %>
 <%- include footer %>
