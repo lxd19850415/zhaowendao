@@ -1,0 +1,48 @@
+<%- include header %>
+
+<script type="text/javascript">
+
+function isNull( str ){ 
+	if ( str == "" )
+	{
+	 	return true; 
+	}
+	var regu = "^[ ]+$"; 
+	var re = new RegExp(regu); 
+	return re.test(str); 
+} 
+
+function checkPost(){ 
+	var keyword1 = window.document.getElementById("keyword_").value;//获取form1对象
+	var password1 = window.document.getElementById("password_").value;//获取form1对象
+	var accoutMsg = window.document.getElementById("accountErrMsg");
+	var pwdMsg = window.document.getElementById("pwdErrMsg");
+	
+	if(isNull(keyword1 ) )
+	{
+		accoutMsg.style.display="block";
+		return;
+	}
+	
+	var form1 = window.document.getElementById("formSearch");//获取form1对象
+	form1.submit();
+}
+
+function showErrMsg(){ 
+	var accoutMsg = window.document.getElementById("accountErrMsg");
+	accoutMsg.style.display="block";
+}
+
+</script>
+
+<form method="post" id="formSearch">
+
+	<div class="searchEdit">
+		<input type="text" name="keyword" id="keyword_" size="36"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
+	</div>
+
+	<div>
+		<input class="searchBtn" type="button" onClick="checkPost()" value="搜索">
+	</div>
+</form>
+<%- include footer %>

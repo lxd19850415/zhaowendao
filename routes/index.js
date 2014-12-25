@@ -251,6 +251,22 @@ module.exports = function(app){
 
   });
 
+  app.get('/search',function(req,res){
+
+    res.render('search', {
+
+      title:'搜索',
+
+      user: req.session.user,
+
+      success: req.flash('success').toString(),
+
+      error: req.flash('error').toString()
+
+    });
+
+  });
+
 };
 
  
