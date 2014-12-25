@@ -25,15 +25,15 @@ article a:hover{color:#333333;text-decoration:underline;}
 .post_{clear: both;}
 .nav_ {float:left;text-align: center; width:80px;height:40px;line-height:40px;font-size:20px;font-family:"Microsoft YaHei";}
 .nav_a {text-decoration:none;width:auto;height:auto;padding: 7px 20px; color:#222;font-family:"Microsoft YaHei";}
-.l {clear:both; float:right;text-align: center;width:80px;height:40px; line-height:40px;font-size:14px;font-family:"Microsoft YaHei";}
+.l {float:right;text-align: center;width:80px;height:40px; line-height:40px;font-size:14px;font-family:"Microsoft YaHei";}
 .navbg {width:100%;height:40px;background-color:#ff8888;}
 .navbg2 {width:664px;height:40px;margin:0 auto;padding:0 0;background-color:#ff8888}
 
 .nav_a:hover{background-color:#ff0000;color:#f9f9f9;-webkit-transition:color .4s linear;} 
-.companybg {width:100%;height:auto;background-color:#ff8888}
-.company {width:1000px;height:auto;margin: 0 auto; font-size:12px;background-color:#ff8888}
-.S_txt2 {text-decoration:none;width:auto;height:auto; color:#808080;padding: 0,1em;}
-
+.companybg {width:100%;height:24px ;background-color:#ff8888;font-size:12px;}
+.company {width:1000px;height:24px;margin: auto auto; background-color:#ff8888;}
+.S_txt2 {text-decoration:none;height:12px; padding:auto auto;color:#808080;line-height: 24px;}
+.changeLanguage{float:right;margin: auto auto;line-height: 24px;text-align: center;}
 .loginAccountTitle{float:left;font-size:16px;margin:5px 0;}
 .loginAccountEdit{width:320px;height:32px;font-size:16px;border-width:1px;border-color:black;margin:5px 0;}
 #accountErrMsg{float:left;font-size:14px;color:#ff0000;margin:7px 0 7px 80px;display:none;}
