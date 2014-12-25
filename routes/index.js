@@ -217,7 +217,7 @@ module.exports = function(app){
 
   var currentUser = req.session.user,
 
-      post = new Post(currentUser.name, req.body.title, req.body.post);
+      post = new Post(currentUser.name, req.body.title, req.body.post, req.body.type);
 
   post.save(function(err){
 

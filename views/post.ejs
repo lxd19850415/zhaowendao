@@ -15,7 +15,7 @@ function isNull( str ){
 } 
 
 function checkPost(){ 
-	var form1 = window.document.getElementById("formLogin");//获取form1对象
+	var form1 = window.document.getElementById("formPost");//获取form1对象
 	var title1 = window.document.getElementById("title_").value;//获取form1对象
 	var postEdit1 = window.document.getElementById("postEdit_").value;//获取form1对象
 	var postType1 = window.document.getElementById("postType").value;//获取form1对象
@@ -30,15 +30,14 @@ function checkPost(){
 		alert("您还未选择类型！");
 		return;
 	}
+
+	form1.submit();
 	
-	{
-		form1.submit();
-	}
 }
 
 </script>
 
-<form method="post">
+<form method="post" id="formPost">
 
 	<div class="loginAccountTitle">
 		标题：
@@ -46,12 +45,13 @@ function checkPost(){
 
 	<input type="text" name="title" size="36" id="title_"  class="loginAccountEdit" width="200px" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" />
 
- 	<select id="postType" node-type="changeLanguage">
+ 	<select name="type" id="postType" node-type="changeLanguage">
 		<option value="0" selected="">选择分类</option>
 		<option value="1">计算机</option>
 		<option value="2">生物</option>
 		<option value="3">机械</option>
 		<option value="4">电子</option>
+		<option value="999">其他</option>
 	</select>
 
 	<br/>
