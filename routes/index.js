@@ -9,12 +9,11 @@ module.exports = function(app){
   app.get('/', function(req, res) {
 
   Post.get(null, function(err, posts1) {
-debugger;
+
     if(err ){
       posts1 = [];
     }
 
-debugger;
     res.render('index',  {
       title: '主页',
       user: req.session.user,

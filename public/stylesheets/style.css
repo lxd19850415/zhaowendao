@@ -34,8 +34,12 @@ article a:hover{color:#333333;text-decoration:underline;}
 .company {width:1060px;height:24px;margin: auto auto; background-color:#ff8888;}
 .S_txt2 {text-decoration:none;height:12px;margin:0 1em; padding:auto auto;color:#808080;line-height: 24px;}
 .changeLanguage{float:right;height:12px;margin: 3px auto;line-height: 24px;padding:0 0;text-align: center;}
+
 .loginAccountTitle{float:left;font-size:16px;margin:5px 0;}
 .loginAccountEdit{width:320px;height:32px;font-size:16px;border-width:1px;border-color:black;margin:5px 0;}
+
+#postType{width:120px;height:20px;font-size:16px;}
+
 #accountErrMsg{float:left;font-size:14px;color:#ff0000;margin:7px 0 7px 80px;display:none;}
 #pwdErrMsg{float:left;font-size:14px;color:#ff0000;margin:7px 0 7px 80px;display:none;}
 .accountEdit{clear:both;}
