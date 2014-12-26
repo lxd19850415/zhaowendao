@@ -267,6 +267,7 @@ module.exports = function(app){
 
   });
 
+
   app.get('/article',function(req,res){
 
 
@@ -288,6 +289,31 @@ debugger;
 
   });
 
+
+app.post('/article', checkLogin);
+app.post('/article', function(req, res){
+
+/*
+  Post.getByID(req.query.id, function(err, post1) {
+
+      if(err ){
+        post1 = [];
+      }
+
+      res.render('article',  {
+        title: '文章',
+        user: req.session.user,
+        post: post1,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+      });
+
+    });
+*/
+});
+
+
+//在上面添加路由
 };
 
 

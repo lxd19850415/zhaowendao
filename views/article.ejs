@@ -1,15 +1,37 @@
 <%- include header %>
 
-  <h2><a href="#"><%= post.title %></a></h2>
+<script type="text/javascript">
 
-  <p class="info">
+function isNull( str ){ 
+	if ( str == "" )
+	{
+	 	return true; 
+	}
+	var regu = "^[ ]+$"; 
+	var re = new RegExp(regu); 
+	return re.test(str); 
+} 
 
+function checkPost(){ 
+	var form1 = window.document.getElementById("likePost");//获取form1对象
+	
+	alert("点赞成功!");
+	form1.submit();
+}
+
+</script>
+
+<span><%= post.title %></span>
+<form method="post" id="likePost">
+<input class="likeBtn" type="button" onClick="checkPost()" value="赞">
+</form>
+<p class="info">
 	分类：<%= post.type %> |
     作者：<a href="#"><%= post.name %></a> |  
 	日期：<%= post.time.minute %> 
-  </p>
+</p>
 
-  <p class="post_"><%- post.post %></p>
+<p class="post_"><%- post.post %></p>
 <hr/>
 <br/>
 
